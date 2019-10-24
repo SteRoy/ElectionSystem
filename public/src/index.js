@@ -10,14 +10,13 @@ ReactDOM.render(
     <Router>
         <React.Fragment>
             <div className="wrap">
-                <h1>Durham Union Society</h1>
                 <Switch>
                     <Route exact path="/" component={Home} />
                 </Switch>
             </div>
         </React.Fragment>
     </Router>,
-    document.getElementById("app")
+    document.getElementById("root")
 );
 
 
