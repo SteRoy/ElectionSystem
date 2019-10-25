@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Home from "./home";
+import Vote from "./vote";
 
 ReactDOM.render(
     <Router>
@@ -12,6 +13,7 @@ ReactDOM.render(
             <div className="wrap">
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/vote/:voter" component={Vote} />
                 </Switch>
             </div>
         </React.Fragment>

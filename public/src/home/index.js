@@ -43,6 +43,7 @@ class Home extends React.Component {
                 <h4>Already a member of the Durham Union Society? Enter your email address below to get voting!</h4>
                 <div className="form-group">
                     <input className="form-control" type="text" name="email" id="email" onChange={this.updateEmail.bind(this)} placeholder="Your DUS Email Address"/>
+                    <br/>
                     <button className="btn btn-primary form-control" onClick={this.submitEmail.bind(this)}>Vote</button>
                 </div>
                 <h7>(If you're not a member yet then head on over to <a href={"https://dus.upmind.app/auth/register"}>our website!)</a></h7>
