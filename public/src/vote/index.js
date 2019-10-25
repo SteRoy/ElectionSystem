@@ -2,6 +2,7 @@ import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import { Redirect } from 'react-router-dom';
 
 // fake data generator
 const getItems = (count, offset = 0) =>
@@ -63,7 +64,8 @@ class Vote extends React.Component {
         super(props);
         this.state = {
             items: [{id: "edo", content: "Eduardo Enamorado"}, {id: "freddie", content: "Freddie Hyde"}, {id: "ron", content: "Re-Open Nominations"}],
-            selected: []
+            selected: [],
+            redirect: false
         };
 
         this.id2List = {
@@ -112,6 +114,9 @@ class Vote extends React.Component {
     };
 
     submitBallot() {
+        this.setState({
+            redirect: true
+        });
         return;
     }
 
@@ -162,6 +167,7 @@ class Vote extends React.Component {
     render() {
         return (
             <div className="container" style={{"textAlign": "center"}}>
+                {this.state.redirect ? <Redirect to="/thanks" /> : ""}
                 <h1>Durham Union Society Presidential Election</h1>
                 <hr/>
                 {this.state.error ? <div className="alert alert-danger">{this.state.error}</div> : ""}

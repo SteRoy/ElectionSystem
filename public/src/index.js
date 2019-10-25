@@ -6,6 +6,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Home from "./home";
 import Vote from "./vote";
+import Thanks from "./thanks";
 
 ReactDOM.render(
     <Router>
@@ -13,6 +14,7 @@ ReactDOM.render(
             <div className="wrap">
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/thanks" component={Thanks} />
                     <Route exact path="/vote/:voter" component={Vote} />
                 </Switch>
             </div>
