@@ -62,7 +62,7 @@ class Vote extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [{id: "edo", content: "Eduardo Enamorado"}, {id: "freddy", content: "Freddy Hyde"}, {id: "ron", content: "Re-Open Nominations"}],
+            items: [{id: "edo", content: "Eduardo Enamorado"}, {id: "freddie", content: "Freddie Hyde"}, {id: "ron", content: "Re-Open Nominations"}],
             selected: []
         };
 
@@ -166,17 +166,17 @@ class Vote extends React.Component {
                 <hr/>
                 {this.state.error ? <div className="alert alert-danger">{this.state.error}</div> : ""}
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-sm-3">
                         <h3>Available Candidates</h3>
                     </div>
-                    <div className="col-4"/>
-                    <div className="col-3">
+                    <div className="col-sm-4"/>
+                    <div className="col-sm-3">
                         <h3>Your Ballot</h3>
                     </div>
                 </div>
                 <DragDropContext onDragEnd={this.onDragEnd}>
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-sm-3">
                             <Droppable droppableId="droppable">
                         {(provided, snapshot) => (
                             <div
@@ -206,8 +206,8 @@ class Vote extends React.Component {
                         )}
                     </Droppable>
                         </div>
-                        <div className="col-4"/>
-                        <div className="col-2">
+                        <div className="col-sm-4"/>
+                        <div className="col-sm-3">
                             <Droppable droppableId="droppable2">
                         {(provided, snapshot) => (
                             <div
@@ -240,11 +240,11 @@ class Vote extends React.Component {
                     </div>
                 </DragDropContext>
                 <div className="row">
-                    <div className="col-3"/>
-                    <div className="col-4">
+                    <div className="col-sm-3"/>
+                    <div className="col-sm-4">
                         <button className="btn btn-success" onClick={this.attemptingToSubmit.bind(this)}>Submit Ballot</button>
                     </div>
-                    <div className="col-3"/>
+                    <div className="col-sm-3"/>
                 </div>
             </div>
         )
